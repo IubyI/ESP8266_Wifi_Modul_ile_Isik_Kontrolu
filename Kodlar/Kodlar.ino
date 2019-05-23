@@ -1,4 +1,4 @@
-#include <ESP8266WiFi.h>
+#include <ESP8266WiFi.h>  //ESP8266 Wifi modülü kütüphanesi
 
 int role = 2;
 int anahtar = 0;
@@ -10,7 +10,7 @@ void setup()
 {
   Serial.begin(115200);
   Serial.println();
-  WiFi.begin("Modemadi", "Modemsifresi");
+  WiFi.begin("Modemadi", "Modemsifresi");  //bağlanılacak ağ adı ve şifresi
   server.begin();
   pinMode(role, OUTPUT);
   pinMode(anahtar, INPUT);
@@ -24,7 +24,7 @@ void setup()
   }
   Serial.println();
 
-  Serial.print("Connected, IP address: ");
+  Serial.print("Connected, IP address: ");  //IP adresi öğrenme
   Serial.println(WiFi.localIP());
 
 }
