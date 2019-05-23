@@ -1,4 +1,6 @@
 #include <ESP8266WiFi.h>  //ESP8266 Wifi modülü kütüphanesi
+#define ag_ismi "Wifi Adresi"
+#define ag_sifresi "Wifi Sifresi"
 
 int role = 2;
 int anahtar = 0;
@@ -10,7 +12,7 @@ void setup()
 {
   Serial.begin(115200);
   Serial.println();
-  WiFi.begin("Modemadi", "Modemsifresi");  //bağlanılacak ağ adı ve şifresi
+  WiFi.begin(ag_ismi, ag_sifresi);  //bağlanılacak ağ adı ve şifresi
   server.begin();
   pinMode(role, OUTPUT);
   pinMode(anahtar, INPUT);
