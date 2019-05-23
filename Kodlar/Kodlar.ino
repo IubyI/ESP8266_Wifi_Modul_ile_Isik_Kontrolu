@@ -49,13 +49,14 @@ void loop(){
   Serial.println(request);
   client.flush();
 
-  if (request.indexOf("/LED-ACIK") != -1) {
+  if (request.indexOf("/LED-ACIK") != -1) {  //ledi yak butanuna basıldığında ya da uygulamadan /LED-ACIK bilgisi geldiğinde röleyi aç
     digitalWrite(role, HIGH);
   }
-  if (request.indexOf("/LED-KAPALI") != -1) {
+  if (request.indexOf("/LED-KAPALI") != -1) {  //ledi sondur butanuna basıldığında ya da uygulamadan /LED-KAPALI bilgisi geldiğinde röleyi kapat
     digitalWrite(role, LOW);
   }
-  
+
+  //html kodları
   client.println("HTTP/1.1 200 OK");
   client.println("Content-Type: text/html");
   client.println(""); 
